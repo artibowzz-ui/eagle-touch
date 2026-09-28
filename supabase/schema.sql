@@ -236,7 +236,11 @@ create policy comp_delete on public.competitions for delete to authenticated
   using (public.is_admin(id));
 
 create policy members_read on public.competition_members for select to authenticated
-  using (public.is_member(competition_id));
+  using (public.is_member(competition_id) or user_id = auth.uid());
+create policy members_update on public.competition_members for update to authenticated
+  using (public.is_admin(competition_id) or user_id = auth.uid())
+  with check (public.is_admin(competition_id)
+    or (user_id = auth.uid() and exists (select 1 from competitions c where c.id = competition_id and c.created_by = auth.uid())));
 create policy members_insert on public.competition_members for insert to authenticated
   with check (
     public.is_admin(competition_id)
