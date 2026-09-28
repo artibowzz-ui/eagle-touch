@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/*
+  Eagle Touch, marketing site tokens.
+  Palette family: Forest (deep green + bone + one amber accent).
+  Theme: follows prefers-color-scheme, tokens swap as CSS variables (one strategy).
+  Shape rule: data chips 8px (rounded-lg, also nested controls inside a 12px track),
+  controls 12px (rounded-xl), surfaces and photos 20px, device frame 44px with a 35px screen,
+  avatars fully round. UI inside the device frame follows the app's own scale.
+  Z-index scale: 40 sticky header. Nothing else is layered.
+*/
+
+:root {
+  --bg: #f3f2ee;
+  --surface: #fbfbf8;
+  --surface-2: #e8e6df;
+  --line: #d8d5cb;
+  --ink: #101814;
+  --ink-2: #4b5750;
+  --ink-3: #5a655e;
+  --forest: #17402f;
+  --forest-2: #1e5540;
+  --on-forest: #eef1ec;
+  --accent: #c99a2e;
+  --on-accent: #16130a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1310;
+    --surface: #111b16;
+    --surface-2: #17241e;
+    --line: #24352d;
+    --ink: #e9ede8;
+    --ink-2: #a3afa8;
+    --ink-3: #85928a;
+    --forest: #1f5540;
+    --forest-2: #27684f;
+    --on-forest: #eef1ec;
+    --accent: #e2bb5c;
+    --on-accent: #16130a;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-forest: var(--forest);
+  --color-forest-2: var(--forest-2);
+  --color-on-forest: var(--on-forest);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --animate-rise: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv11";
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
