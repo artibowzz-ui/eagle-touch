@@ -1,6 +1,6 @@
 const steps = [
   { verb: "Créez", text: "Nom, dates et règles. Vous devenez l'administrateur de la compétition.", ui: "Eagle Touch Tour 2027" },
-  { verb: "Invitez", text: "Partagez le code. Vos amis rejoignent la compétition depuis leur téléphone.", ui: "ET-2027-GENT" },
+  { verb: "Invitez", text: "Partagez le code. Vos amis rejoignent la compétition depuis leur téléphone.", ui: "ET-2027-XXXX" },
   { verb: "Planifiez", text: "Choisissez le parcours et la date. Chacun indique s'il participe.", ui: "Golf de Durbuy, sam. 17 avril" },
   { verb: "Jouez", text: "Les coups se saisissent trou par trou, directement sur le parcours.", ui: "Trou 7 : 5 coups, 2 pts" },
   { verb: "Suivez", text: "Points Stableford et classement se mettent à jour à chaque carte validée.", ui: "1. Thomas Laurent  37,00" },
