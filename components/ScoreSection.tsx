@@ -28,7 +28,7 @@ export function ScoreSection() {
       <div className="max-w-[640px] lg:mx-auto lg:text-center">
         <h2 className="text-[2rem] leading-[1.05] font-semibold tracking-[-0.03em] md:text-5xl">Un trou, un geste.</h2>
         <p className="mt-4 text-ink-2 md:text-lg">
-          Le nombre de coups au pouce, les points Stableford avant de marcher vers le départ suivant. Essayez.
+          Un score saisi, vos points Stableford sont déjà calculés. À vous le trou suivant.
         </p>
       </div>
       <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[1fr_392px_1fr] lg:items-center lg:gap-14">
