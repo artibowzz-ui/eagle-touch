@@ -11,7 +11,7 @@ export function FinalCta() {
             La saison 2027 commence ici.
           </h2>
           <p className="mt-5 max-w-[42ch] text-on-forest/80 md:text-lg">
-            Créez votre compétition et partagez son code. Vos amis la rejoignent depuis leur téléphone.
+            Créez votre compétition et partagez le code. Vos amis la rejoignent depuis leur téléphone.
           </p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end">
