@@ -6,7 +6,7 @@ const longDrive: Cell = { title: "Long drive", rule: "Le plus long drive, attrib
 const small: (Cell & { tone: "plain" | "forest" | "stone" })[] = [
   { title: "Plus près du drapeau", rule: "Un par 3 désigné avant la manche.", leader: "Thomas Laurent", count: 2, unit: "victoires", tone: "forest" },
   { title: "Nains", rule: "Premier coup perdu ou resté avant les départs.", leader: "Louis Martin", count: 7, unit: "nains", tone: "plain" },
-  { title: "Croix", rule: "Déclarée par le joueur sur le trou.", leader: "Arthur Petit", count: 5, unit: "croix", tone: "plain" },
+  { title: "Croix", rule: "Déclarée par le joueur sur le trou.", leader: "Tiger Woods", count: 5, unit: "croix", tone: "plain" },
   { title: "Birdies", rule: "Un coup sous le par, compté tout seul.", leader: "Julien Moreau", count: 9, unit: "birdies", tone: "stone" },
 ];
 
@@ -20,10 +20,10 @@ export function Challenges() {
   return (
     <section id="defis" className="mx-auto max-w-[1280px] px-4 pb-20 md:px-8 md:pb-28">
       <h2 className="max-w-[20ch] text-[2rem] leading-[1.05] font-semibold tracking-[-0.03em] md:text-5xl">
-        Les petits jeux dans la partie.
+        Les petits défis pendant la partie.
       </h2>
       <p className="mt-4 max-w-[52ch] text-ink-2 md:text-lg">
-        Cinq défis suivis pendant chaque manche, chacun avec son classement sur toute la saison.
+        Cinq challenges pendant chaque manche, chacun avec son classement sur toute la saison.
       </p>
 
       <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 lg:grid-cols-4 lg:grid-rows-2">
