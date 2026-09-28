@@ -33,7 +33,7 @@ export const NEXT_ROUND = {
 
 export const PLAYERS: Player[] = [
   { id: "thomas", name: "Thomas Laurent", initials: "TL", index: "14,2", rounds: [38, null, 37, 36] },
-  { id: "arthur", name: "Arthur Petit", initials: "AP", index: "18,4", rounds: [35, 39, 32, 38] },
+  { id: "arthur", name: "Tiger Woods", initials: "AP", index: "18,4", rounds: [35, 39, 32, 38] },
   { id: "louis", name: "Louis Martin", initials: "LM", index: "22,7", rounds: [36, 33, 35, 35] },
   { id: "julien", name: "Julien Moreau", initials: "JM", index: "11,9", rounds: [32, null, 34, 35] },
 ];
