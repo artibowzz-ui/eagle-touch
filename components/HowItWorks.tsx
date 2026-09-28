@@ -10,7 +10,7 @@ export function HowItWorks() {
   return (
     <section id="fonctionnement" className="mx-auto max-w-[1280px] px-4 py-20 md:px-8 md:py-28">
       <h2 className="max-w-[18ch] text-[2rem] leading-[1.05] font-semibold tracking-[-0.03em] md:text-5xl">
-        De l&apos;invitation au dernier putt.
+        Tout commence par une invitation. Le reste se joue sur le parcours.
       </h2>
       <ol className="mt-10 md:mt-14">
         {steps.map((s) => (
