@@ -5,7 +5,7 @@ export function Statement() {
         Une manche manquée ne vaut pas zéro.
       </p>
       <p className="mt-6 max-w-[38ch] text-lg text-ink-2 md:mt-8 md:text-2xl md:leading-snug">
-        Elle n&apos;entre simplement pas dans la moyenne. Chacun joue quand il peut, le classement reste juste.
+        Elle n&apos;entre simplement pas dans la moyenne. Chacun joue quand il peut, le classement reste correcte.
       </p>
     </section>
   );
