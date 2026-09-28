@@ -14,7 +14,7 @@ export function PhotoBand() {
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(8_14_11/0.82)] via-[rgb(8_14_11/0.2)] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-6 text-[#eef1ec] md:p-12 lg:p-16">
           <h2 className="max-w-[16ch] text-[2rem] leading-[1.05] font-semibold tracking-[-0.03em] md:text-5xl lg:text-6xl">
-            Entre deux trous, un coup d&apos;œil suffit.
+            Votre classement, toujours à portée de regard.
           </h2>
           <p className="mt-4 max-w-[44ch] text-[#eef1ec]/85 md:text-lg">
             Les scores se saisissent directement sur le parcours. Le classement se met à jour en temps réel.
