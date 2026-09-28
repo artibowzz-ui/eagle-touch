@@ -1,7 +1,7 @@
 import { AverageBoard } from "./AverageBoard";
 
 const examples = [
-  { name: "Arthur Petit", sum: "35 + 39 + 32 + 38 = 144", div: "144 ÷ 4 manches", avg: "36,00", note: "Quatre manches jouées." },
+  { name: "Tiger Woods", sum: "35 + 39 + 32 + 38 = 144", div: "144 ÷ 4 manches", avg: "36,00", note: "Quatre manches jouées." },
   { name: "Thomas Laurent", sum: "38 + 37 + 36 = 111", div: "111 ÷ 3 manches", avg: "37,00", note: "Manche 2 manquée, non comptée." },
 ];
 
