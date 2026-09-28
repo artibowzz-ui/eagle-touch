@@ -1,8 +1,8 @@
 import { ScoreDemo } from "./ScoreDemo";
 
 const notesLeft = [
-  { t: "Coups reçus", d: "Calculés depuis votre index et l'index du trou. Ici, un coup sur le trou 7." },
-  { t: "Points en direct", d: "Chaque coup ajouté recalcule le net et les points Stableford." },
+  { t: "Coups reçus", d: "Calculés depuis votre index et l'index du trou." },
+  { t: "Points en direct", d: "Chaque coup ajouté recalcule le score net et les points Stableford." },
 ];
 const notesRight = [
   { t: "Une main suffit", d: "Grands boutons, grands chiffres, aucun clavier à ouvrir entre deux coups." },
