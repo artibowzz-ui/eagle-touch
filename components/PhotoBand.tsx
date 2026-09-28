@@ -17,7 +17,7 @@ export function PhotoBand() {
             Entre deux trous, un coup d&apos;œil suffit.
           </h2>
           <p className="mt-4 max-w-[44ch] text-[#eef1ec]/85 md:text-lg">
-            Les scores se saisissent sur le parcours. Le classement est à jour avant le 19e trou.
+            Les scores se saisissent directement sur le parcours. Le classement se met à jour en temps réel.
           </p>
         </div>
       </div>
