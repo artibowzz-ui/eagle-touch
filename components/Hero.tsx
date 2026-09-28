@@ -11,7 +11,7 @@ export function Hero() {
       <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-10 xl:grid-cols-[1.05fr_1fr]">
         <div className="max-w-[640px]">
           <h1 className="text-[2.25rem] leading-[1.04] font-semibold tracking-[-0.035em] text-balance md:text-6xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[3.75rem]">
-            Jouez comme sur le Tour. Classez-vous comme les pros..
+            Jouez comme sur le Tour. Classez-vous comme les pros.
           </h1>
           <p className="mt-5 max-w-[40ch] text-[17px] leading-relaxed text-ink-2 md:text-lg">
             Créez la compétition, saisissez les scores trou par trou. L'application calcule le score Stableford et le
