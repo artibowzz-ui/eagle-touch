@@ -1,4 +1,4 @@
-import { CREATE_URL } from "@/lib/season";
+import { APP_URL } from "@/lib/season";
 import { LinkButton } from "./LinkButton";
 
 const links = [
@@ -21,8 +21,8 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <LinkButton href={CREATE_URL} size="sm">
-          Créer une compétition
+        <LinkButton href={APP_URL} size="sm">
+          Connectez-vous
         </LinkButton>
       </div>
     </header>

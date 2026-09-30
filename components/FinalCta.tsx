@@ -1,5 +1,5 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { CREATE_URL, JOIN_URL } from "@/lib/season";
+import { APP_URL, JOIN_URL } from "@/lib/season";
 import { LinkButton } from "./LinkButton";
 
 export function FinalCta() {
@@ -15,8 +15,8 @@ export function FinalCta() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end">
-          <LinkButton href={CREATE_URL} variant="accent">
-            Créer une compétition <ArrowRight size={16} weight="bold" />
+          <LinkButton href={APP_URL} variant="accent">
+            Connectez-vous <ArrowRight size={16} weight="bold" />
           </LinkButton>
           <LinkButton href={JOIN_URL} variant="outlineOnForest">
             Rejoindre une compétition
