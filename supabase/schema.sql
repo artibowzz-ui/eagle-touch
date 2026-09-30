@@ -253,18 +253,34 @@ create policy members_delete on public.competition_members for delete to authent
 
 -- Parcours : partagés entre tous les utilisateurs, modifiables par leur créateur.
 create policy courses_read on public.golf_courses for select to authenticated using (true);
-create policy courses_insert on public.golf_courses for insert to authenticated with check (created_by = auth.uid());
-create policy courses_update on public.golf_courses for update to authenticated using (created_by = auth.uid());
-create policy courses_delete on public.golf_courses for delete to authenticated using (created_by = auth.uid());
+create table if not exists public.app_admins (
+  user_id    uuid primary key references auth.users(id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+alter table public.app_admins enable row level security;
+drop policy if exists app_admins_read on public.app_admins;
+create policy app_admins_read on public.app_admins for select to authenticated using (true);
 
+create or replace function public.is_app_admin() returns boolean
+  language sql stable security definer set search_path = public as $$
+  select exists (select 1 from public.app_admins where user_id = auth.uid());
+$$;
+
+-- Parcours : le créateur ou un administrateur.
+create policy courses_insert on public.golf_courses for insert to authenticated
+  with check (created_by = auth.uid() or public.is_app_admin());
+create policy courses_update on public.golf_courses for update to authenticated
+  using (created_by = auth.uid() or public.is_app_admin());
+create policy courses_delete on public.golf_courses for delete to authenticated
+  using (created_by = auth.uid() or public.is_app_admin());
 create policy holes_read on public.golf_holes for select to authenticated using (true);
 create policy holes_write on public.golf_holes for all to authenticated
-  using (exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()))
-  with check (exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()));
+  using (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()))
+  with check (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()));
 create policy tees_read on public.course_tees for select to authenticated using (true);
 create policy tees_write on public.course_tees for all to authenticated
-  using (exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()))
-  with check (exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()));
+  using (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()))
+  with check (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()));
 
 -- Manches : lecture par les membres, écriture par les administrateurs.
 create policy rounds_read on public.rounds for select to authenticated using (public.is_member(competition_id));

@@ -550,3 +550,7 @@ details.more .in{padding:16px 18px}
 .loop-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:6px}
 .loop-h .field{flex:1}
 .loop-h>.small{padding-bottom:14px;white-space:nowrap}
+fieldset.ro{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:18px}
+fieldset.ro[disabled] .inp,fieldset.ro[disabled] .seg{opacity:.75}
+fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee"],fieldset.ro[disabled] [data-a="addLayout"],fieldset.ro[disabled] [data-a="removeLayout"]{display:none}
+.idband .chip.gold{background:rgba(226,187,92,.2);color:#F0D48C}
