@@ -6,7 +6,7 @@ const longDrive: Cell = { title: "Long drive", rule: "Le plus long drive, attrib
 const small: (Cell & { tone: "plain" | "forest" | "stone" })[] = [
   { title: "Plus près du drapeau", rule: "Un par 3 désigné avant la manche.", leader: "Thomas Laurent", count: 2, unit: "victoires", tone: "forest" },
   { title: "Nains", rule: "Premier coup perdu ou resté avant les départs.", leader: "Louis Martin", count: 7, unit: "nains", tone: "plain" },
-  { title: "Croix", rule: "Déclarée par le joueur sur le trou.", leader: "Tiger Woods", count: 5, unit: "croix", tone: "plain" },
+  { title: "Croix", rule: "Chaque balle relevée compte une croix.", leader: "Tiger Woods", count: 5, unit: "croix", tone: "plain" },
   { title: "Birdies", rule: "Un coup sous le par, compté tout seul.", leader: "Julien Moreau", count: 9, unit: "birdies", tone: "stone" },
 ];
 
