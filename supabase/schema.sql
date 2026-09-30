@@ -60,7 +60,8 @@ create table public.golf_courses (
   location    text not null default '',
   country     text not null default '',
   region      text not null default '',
-  holes_count int  not null check (holes_count in (9,18)),
+  holes_count int  not null check (holes_count in (9,18,27,36,45,54)),
+  sections    jsonb,                                         -- plus de 18 trous : 9 trous et parcours du club
   par         int  not null,
   source      text,                                          -- référence annuaire
   created_by  uuid not null references public.profiles(id),
@@ -70,7 +71,7 @@ create table public.golf_courses (
 
 create table public.golf_holes (
   course_id    uuid not null references public.golf_courses(id) on delete cascade,
-  number       int  not null check (number between 1 and 18),
+  number       int  not null check (number between 1 and 54),
   par          int  not null check (par between 3 and 5),
   stroke_index int  not null check (stroke_index between 1 and 18),
   distance_m   int,

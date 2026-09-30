@@ -547,3 +547,6 @@ details.more .in{padding:16px 18px}
 .word{font-size:.62em;letter-spacing:-.02em}
 .rule{border-left:3px solid var(--gold);background:var(--surface);border-radius:0 12px 12px 0;padding:12px 14px;font-size:14px;color:var(--ink-2)}
 .rule b{color:var(--ink)}
+.loop-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:6px}
+.loop-h .field{flex:1}
+.loop-h>.small{padding-bottom:14px;white-space:nowrap}
