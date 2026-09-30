@@ -50,6 +50,7 @@ Après la première installation, exécutez aussi (une fois chacun, dans SQL Edi
 - `supabase/patch-002-manches-minimum.sql` (nombre minimum de manches par compétition)
 - `supabase/patch-003-clubs-plusieurs-parcours.sql` (clubs de 27 trous et plus, plusieurs parcours)
 - `supabase/patch-004-administrateur-application.sql` (administrateurs qui peuvent corriger tous les parcours)
+- `supabase/patch-005-cartes-hommes-dames.sql` (cartes de score hommes / dames, jusqu'à 7 par club)
 
 ## Base de données
 Tables : `profiles`, `handicap_history`, `competitions`, `competition_members`, `golf_courses`,

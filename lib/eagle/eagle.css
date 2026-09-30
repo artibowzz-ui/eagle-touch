@@ -565,3 +565,13 @@ fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee
 .adm-table td .chip{margin:2px 0}
 .adm-table tbody tr:first-child td{border-top:0}
 .adm-table .nw{white-space:nowrap}
+/* Cartes de score */
+.card-in{background:var(--bg)}
+.card-h{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-h .small{margin-left:auto}
+.cfg-d{background:var(--surface)!important}
+.cfg{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.cfg th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:500;text-align:left;padding:4px 4px 8px}
+.cfg td{padding:3px 4px;font-size:13.5px;color:var(--ink-2);white-space:nowrap}
+.cfg td:first-child{padding-right:8px;font-weight:600;color:var(--ink)}
+.cfg .inp{min-height:38px;padding:6px 8px;font-size:15px;text-align:center}

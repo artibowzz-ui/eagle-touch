@@ -14,6 +14,7 @@ create table public.profiles (
   last_name   text not null default '',
   email       text not null default '',
   handicap    numeric(4,1) not null default 54 check (handicap between -10 and 54),
+  gender      text check (gender in ('M','F')),                -- cartes hommes (M) ou dames (F)
   photo       text,                                          -- image 192 px en data URL
   managed_by  uuid references public.profiles(id) on delete set null, -- joueur sans compte
   created_at  timestamptz not null default now(),
@@ -87,7 +88,11 @@ create table public.course_tees (
   course_rating  numeric(4,1),
   slope          int check (slope between 55 and 155),
   total_distance int,
-  hole_distances int[]
+  hole_distances int[],
+  gender         text not null default 'M' check (gender in ('M','F')), -- carte hommes ou dames
+  layout         text,                                       -- parcours du club (plus de 18 trous)
+  pars           int[],                                      -- vide = carte de référence
+  stroke_indexes int[]
 );
 
 -- ---------- Manches ----------
@@ -122,6 +127,7 @@ create table public.round_participants (
   created_at     timestamptz not null default now(),
   updated_at     timestamptz not null default now(),
   updated_by     uuid references public.profiles(id) on delete set null,
+  card           text,           -- carte jouée (départ), figée pour la manche
   primary key (round_id, user_id)
 );
 
@@ -192,9 +198,11 @@ grant execute on function public.join_competition(text) to authenticated;
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare h numeric := coalesce(nullif(new.raw_user_meta_data->>'handicap', '')::numeric, 54);
+        g text := nullif(new.raw_user_meta_data->>'gender', '');
 begin
-  insert into profiles (id, first_name, last_name, email, handicap)
-  values (new.id, coalesce(new.raw_user_meta_data->>'first_name', ''), coalesce(new.raw_user_meta_data->>'last_name', ''), coalesce(new.email, ''), h)
+  insert into profiles (id, first_name, last_name, email, handicap, gender)
+  values (new.id, coalesce(new.raw_user_meta_data->>'first_name', ''), coalesce(new.raw_user_meta_data->>'last_name', ''), coalesce(new.email, ''), h,
+          case when g in ('M','F') then g else null end)
   on conflict (id) do nothing;
   insert into handicap_history (profile_id, value) values (new.id, h) on conflict do nothing;
   return new;
