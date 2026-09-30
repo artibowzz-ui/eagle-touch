@@ -5,7 +5,7 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", dis
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={`${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );
