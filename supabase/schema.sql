@@ -39,6 +39,7 @@ create table public.competitions (
   created_by  uuid not null references public.profiles(id),
   allowance   int  not null default 100 check (allowance between 50 and 100),
   challenges  jsonb not null default '{}'::jsonb,            -- défis activés
+  min_rounds  int  not null default 0 check (min_rounds between 0 and 50), -- manches minimum (0 = aucun)
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()
 );

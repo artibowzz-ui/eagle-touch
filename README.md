@@ -44,6 +44,11 @@ npm run dev                  # http://localhost:3000 et http://localhost:3000/ap
 - `lib/eagle/dir.json` : annuaire des golfs de Belgique et de France (OpenStreetMap, ODbL)
 - `supabase/schema.sql` : tables, règles de sécurité, fonction « rejoindre avec un code », profil créé à l'inscription
 
+## Mises à jour de la base
+Après la première installation, exécutez aussi (une fois chacun, dans SQL Editor) :
+- `supabase/patch-001-creer-competition.sql`
+- `supabase/patch-002-manches-minimum.sql` (nombre minimum de manches par compétition)
+
 ## Base de données
 Tables : `profiles`, `handicap_history`, `competitions`, `competition_members`, `golf_courses`,
 `golf_holes`, `course_tees`, `rounds`, `round_participants`, `hole_scores`.
