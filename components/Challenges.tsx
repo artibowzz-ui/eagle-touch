@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Cell = { title: string; rule: string; leader: string; count: number; unit: string };
 
-const longDrive: Cell = { title: "Long drive", rule: "Le plus long drive, attribué trou par trou.", leader: "Julien Moreau", count: 11, unit: "trous gagnés" };
+const longDrive: Cell = { title: "Long drive", rule: "Un seul trou par manche, choisi avant le départ.", leader: "Julien Moreau", count: 4, unit: "manches gagnées" };
 const small: (Cell & { tone: "plain" | "forest" | "stone" })[] = [
   { title: "Plus près du drapeau", rule: "Un par 3 désigné avant la manche.", leader: "Thomas Laurent", count: 2, unit: "victoires", tone: "forest" },
   { title: "Nains", rule: "Premier coup perdu ou resté avant les départs.", leader: "Louis Martin", count: 7, unit: "nains", tone: "plain" },
