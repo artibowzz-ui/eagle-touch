@@ -575,3 +575,7 @@ fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee
 .cfg td{padding:3px 4px;font-size:13.5px;color:var(--ink-2);white-space:nowrap}
 .cfg td:first-child{padding-right:8px;font-weight:600;color:var(--ink)}
 .cfg .inp{min-height:38px;padding:6px 8px;font-size:15px;text-align:center}
+.rd-note{display:flex;align-items:center;gap:10px;background:var(--accent-soft);color:var(--accent-ink);border-radius:12px;padding:6px 6px 6px 14px;font-size:13.5px;font-weight:500}
+.rd-note[hidden]{display:none}
+.rd-note svg.i{width:18px;height:18px}
+.rd-note .btn{min-height:36px;color:var(--accent-ink)}
