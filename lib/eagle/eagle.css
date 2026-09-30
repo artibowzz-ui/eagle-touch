@@ -543,3 +543,7 @@ details.more .in{padding:16px 18px}
 .seg span.tee-dot{display:inline-block;min-height:0;width:12px;height:12px;padding:0;border-radius:50%;flex:none;margin-right:8px}
 .hflow{grid-template-columns:repeat(3,1fr)}
 .hflow.dark{grid-template-columns:repeat(3,auto)}
+.lb-row.out,.lb-table tr.out{opacity:.62}
+.word{font-size:.62em;letter-spacing:-.02em}
+.rule{border-left:3px solid var(--gold);background:var(--surface);border-radius:0 12px 12px 0;padding:12px 14px;font-size:14px;color:var(--ink-2)}
+.rule b{color:var(--ink)}
