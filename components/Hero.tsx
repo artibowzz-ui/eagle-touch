@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
-import { CREATE_URL } from "@/lib/season";
+import { APP_URL } from "@/lib/season";
 import { LinkButton } from "./LinkButton";
 import { PhoneFrame } from "./app/PhoneFrame";
 import { LeaderboardScreen } from "./app/LeaderboardScreen";
@@ -18,7 +18,7 @@ export function Hero() {
             classement.
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-            <LinkButton href={CREATE_URL}>Créer une compétition</LinkButton>
+            <LinkButton href={APP_URL}>Connectez-vous</LinkButton>
             <a
               href="#moyenne"
               className="inline-flex h-12 items-center gap-1.5 text-[15px] font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] transition-colors hover:decoration-accent"
