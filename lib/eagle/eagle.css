@@ -554,3 +554,14 @@ fieldset.ro{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:
 fieldset.ro[disabled] .inp,fieldset.ro[disabled] .seg{opacity:.75}
 fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee"],fieldset.ro[disabled] [data-a="addLayout"],fieldset.ro[disabled] [data-a="removeLayout"]{display:none}
 .idband .chip.gold{background:rgba(226,187,92,.2);color:#F0D48C}
+/* Administration des golfs */
+.side>a.side-admin{margin-top:14px;position:relative}
+.side>a.side-admin::before{content:"";position:absolute;left:14px;right:14px;top:-8px;border-top:1px solid var(--line)}
+.adm-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.adm-search{position:relative;flex:1 1 280px;min-width:0}
+.adm-search svg.i{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-3);pointer-events:none}
+.adm-search .inp{padding-left:42px}
+.adm-table td{vertical-align:middle}
+.adm-table td .chip{margin:2px 0}
+.adm-table tbody tr:first-child td{border-top:0}
+.adm-table .nw{white-space:nowrap}
