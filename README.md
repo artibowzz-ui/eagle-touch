@@ -48,6 +48,7 @@ npm run dev                  # http://localhost:3000 et http://localhost:3000/ap
 Après la première installation, exécutez aussi (une fois chacun, dans SQL Editor) :
 - `supabase/patch-001-creer-competition.sql`
 - `supabase/patch-002-manches-minimum.sql` (nombre minimum de manches par compétition)
+- `supabase/patch-003-clubs-plusieurs-parcours.sql` (clubs de 27 trous et plus, plusieurs parcours)
 
 ## Base de données
 Tables : `profiles`, `handicap_history`, `competitions`, `competition_members`, `golf_courses`,
