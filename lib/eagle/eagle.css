@@ -580,3 +580,5 @@ fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee
 .rd-note svg.i{width:18px;height:18px}
 .rd-note .btn{min-height:36px;color:var(--accent-ink)}
 .ro-val{display:flex;align-items:center;background:var(--surface-2);color:var(--ink-2);border-color:transparent;overflow:hidden;text-overflow:ellipsis}
+.legal{font-size:13px;color:var(--ink-3);text-align:center;margin-top:4px}
+.legal a{color:inherit}
