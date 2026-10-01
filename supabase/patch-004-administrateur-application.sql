@@ -35,9 +35,9 @@ create policy tees_write on public.course_tees for all to authenticated
   using (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()))
   with check (public.is_app_admin() or exists (select 1 from golf_courses c where c.id = course_id and c.created_by = auth.uid()));
 
--- Premier administrateur : remplacez l'adresse si votre compte Eagle Touch utilise un autre e-mail.
+-- Premier administrateur : remplacez l'adresse ci-dessous par l'e-mail de votre compte Eagle Touch avant d'exécuter.
 insert into public.app_admins (user_id)
-  select id from auth.users where lower(email) = lower('artibowzz@gmail.com')
+  select id from auth.users where lower(email) = lower('VOTRE-EMAIL@exemple.com')
   on conflict do nothing;
 
 -- Vérification : doit afficher votre adresse.

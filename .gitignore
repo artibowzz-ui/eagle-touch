@@ -1,4 +1,7 @@
 node_modules
 .next
 out
-.env*.local
+# Jamais de secrets dans le dépôt (il est public)
+.env
+.env.*
+!.env.example
