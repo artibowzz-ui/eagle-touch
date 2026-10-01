@@ -6,6 +6,7 @@ export function Footer() {
         <a href="#fonctionnement" className="hover:text-ink">Fonctionnement</a>
         <a href="#moyenne" className="hover:text-ink">Classement</a>
         <a href="#defis" className="hover:text-ink">Défis</a>
+        <a href="/confidentialite" className="hover:text-ink">Confidentialité</a>
       </nav>
       <p>© 2026 Eagle Touch</p>
     </footer>

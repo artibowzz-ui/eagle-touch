@@ -52,6 +52,7 @@ Après la première installation, exécutez aussi (une fois chacun, dans SQL Edi
 - `supabase/patch-004-administrateur-application.sql` (administrateurs qui peuvent corriger tous les parcours)
 - `supabase/patch-005-cartes-hommes-dames.sql` (cartes de score hommes / dames, jusqu'à 7 par club)
 - `supabase/patch-006-securite.sql` (renforcement de la sécurité : e-mails, codes d'invitation, verrous des scores)
+- `supabase/patch-007-vie-privee.sql` (suppression de compte, RGPD)
 
 ## Base de données
 Tables : `profiles`, `handicap_history`, `competitions`, `competition_members`, `golf_courses`,
