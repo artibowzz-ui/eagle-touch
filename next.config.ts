@@ -38,6 +38,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  /* Identifiant de chaque mise en ligne (fourni par Vercel) : sert à la mise à jour automatique de l'application. */
+  env: { NEXT_PUBLIC_BUILD_ID: process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_ID || "" },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "picsum.photos" },
