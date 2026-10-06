@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Eagle Touch",
   description: "Vos compétitions de golf au Stableford, classées à la moyenne.",
   robots: { index: false },
+  appleWebApp: { capable: true, title: "Eagle Touch", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
