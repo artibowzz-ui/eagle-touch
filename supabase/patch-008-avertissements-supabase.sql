@@ -9,8 +9,7 @@
 --   2. les visiteurs non connectés n'ont plus aucun droit sur les tables ;
 --   3. les règles d'accès sont réécrites pour être évaluées une fois par requête et non par ligne ;
 --   4. une seule règle de lecture par table ;
---   5. des index sur les clés étrangères ;
---   6. l'interface GraphQL, que l'application n'utilise pas, est désactivée.
+--   5. des index sur les clés étrangères.
 
 begin;
 
@@ -247,6 +246,7 @@ create policy join_attempts_none on public.join_attempts for all to authenticate
 
 -- ---------------------------------------------------------------------
 -- 3. Déclencheurs : ils restent en place mais ne sont plus appelables directement.
+--    (rls_auto_enable est la fonction de Supabase qui protège automatiquement les nouvelles tables.)
 -- ---------------------------------------------------------------------
 create or replace function public.rp_guard() returns trigger
 language plpgsql security definer set search_path = public as $$
@@ -270,7 +270,7 @@ declare f record;
 begin
   for f in select p.oid::regprocedure as sig from pg_proc p
            where p.pronamespace = 'public'::regnamespace
-             and p.proname in ('handle_new_user', 'profiles_guard', 'rp_guard', 'competitions_code_guard', 'gen_code') loop
+             and p.proname in ('handle_new_user', 'profiles_guard', 'rp_guard', 'competitions_code_guard', 'gen_code', 'rls_auto_enable') loop
     execute format('revoke all on function %s from public, anon, authenticated', f.sig);
   end loop;
 end $$;
@@ -322,13 +322,3 @@ create index if not exists round_participants_user_id_idx on public.round_partic
 create index if not exists rounds_course_id_idx on public.rounds (course_id);
 
 commit;
-
--- ---------------------------------------------------------------------
--- 7. GraphQL : l'application ne l'utilise pas. Le désactiver retire les avertissements
---    « table exposée via GraphQL ». Sans effet si l'extension n'est pas installée.
--- ---------------------------------------------------------------------
-do $$ begin
-  drop extension if exists pg_graphql;
-exception when others then
-  raise notice 'pg_graphql non désactivé (%). Désactivez-le dans Database > Extensions.', sqlerrm;
-end $$;
