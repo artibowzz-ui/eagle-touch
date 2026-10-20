@@ -1,54 +1,26 @@
 import type { Metadata } from "next";
 import { LEGAL } from "@/lib/legal";
-import { APP_URL } from "@/lib/season";
+import { LegalPage, Section, ContactMail } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Confidentialité et mentions légales · Eagle Touch",
   description: "Quelles données Eagle Touch enregistre, pourquoi, qui les voit, et comment exercer vos droits.",
 };
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="border-t border-line py-8">
-      <h2 className="text-xl font-semibold tracking-[-0.02em]">{title}</h2>
-      <div className="mt-3 space-y-3 text-ink-2 [&_li]:ml-5 [&_li]:list-disc [&_strong]:font-semibold [&_strong]:text-ink [&_ul]:space-y-1.5">
-        {children}
-      </div>
-    </section>
-  );
-}
-
 export default function Confidentialite() {
-  const mail = LEGAL.email.includes("@") ? (
-    <a className="underline underline-offset-4" href={`mailto:${LEGAL.email}`}>
-      {LEGAL.email}
-    </a>
-  ) : (
-    LEGAL.email
-  );
+  const mail = <ContactMail />;
   return (
-    <>
-      <header className="border-b border-line/70">
-        <div className="mx-auto flex h-16 max-w-[820px] items-center justify-between px-4 md:px-8">
-          <a href="/" className="text-[17px] font-semibold tracking-[-0.02em]">
-            Eagle Touch
-          </a>
-          <a href={APP_URL} className="text-sm font-medium underline decoration-line decoration-2 underline-offset-[6px]">
-            Ouvrir l&apos;application
-          </a>
-        </div>
-      </header>
-      <main className="mx-auto max-w-[820px] px-4 pb-20 pt-10 leading-relaxed md:px-8 md:pt-16">
-        <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.035em] md:text-5xl">
-          Confidentialité et mentions légales
-        </h1>
-        <p className="mt-4 max-w-[62ch] text-ink-2">
-          Eagle Touch sert à organiser des compétitions de golf entre amis. Cette page explique quelles données
-          sont enregistrées, pourquoi, qui peut les voir, et comment les consulter ou les supprimer.
+    <LegalPage
+      title="Confidentialité et mentions légales"
+      updated={LEGAL.miseAJour}
+      intro={
+        <p>
+          Eagle Touch sert à organiser des compétitions de golf entre amis. Cette page explique quelles données sont
+          enregistrées, pourquoi, qui peut les voir, et comment les consulter ou les supprimer. L&apos;utilisation du
+          service est encadrée par les <a className="underline underline-offset-4" href="/conditions">conditions d&apos;utilisation</a>.
         </p>
-        <p className="mt-2 text-sm text-ink-3">Dernière mise à jour : {LEGAL.miseAJour}</p>
-
-        <div className="mt-10">
+      }
+    >
           <Section title="Qui est responsable de vos données">
             <p>
               Le responsable du traitement, au sens du Règlement général sur la protection des données (RGPD), est :
@@ -88,8 +60,10 @@ export default function Confidentialite() {
                 partagée.
               </li>
               <li>
-                <strong>Données techniques :</strong> comme tout site, l&apos;hébergeur reçoit votre adresse IP et
-                des informations sur votre navigateur pour acheminer les pages et protéger le service.
+                <strong>Données techniques :</strong> comme tout site, les hébergeurs reçoivent votre adresse IP et
+                des informations sur votre navigateur pour acheminer les pages et protéger le service. Les essais de
+                code d&apos;invitation erronés sont notés avec votre compte pendant au plus un jour, pour bloquer les
+                tentatives de deviner un code.
               </li>
             </ul>
             <p>
@@ -109,7 +83,12 @@ export default function Confidentialite() {
                 article 6.1.f du RGPD.
               </li>
             </ul>
-            <p>Vos données ne sont ni vendues, ni utilisées à des fins publicitaires, ni soumises à une décision automatisée.</p>
+            <p>
+              Vos données ne sont ni vendues, ni utilisées à des fins publicitaires. L&apos;Index Eagle Touch est
+              calculé automatiquement à partir de vos cartes ; il ne sert qu&apos;à fixer les handicaps de jeu dans les
+              compétitions dont l&apos;administrateur l&apos;a choisi, et cet administrateur peut toujours ajuster un
+              handicap à la main. Aucune autre décision automatisée n&apos;est prise à votre sujet.
+            </p>
           </Section>
 
           <Section title="Qui voit quoi">
@@ -146,12 +125,18 @@ export default function Confidentialite() {
                 <strong>Vercel</strong> : hébergement du site et de l&apos;application, y compris les photos
                 d&apos;illustration, qui vous sont servies par ce site.
               </li>
+              <li>
+                <strong>Brevo</strong> (Sendinblue SAS, France) : envoi des e-mails du service, c&apos;est-à-dire la
+                confirmation de votre adresse et le code de changement de mot de passe. Brevo reçoit votre adresse
+                e-mail et le contenu de ces messages.
+              </li>
             </ul>
             <p>
               Ces prestataires agissent sur instruction du responsable et sont liés par un contrat de
-              sous-traitance. Ce sont des sociétés établies aux États-Unis : lorsque des données sont traitées hors
-              de l&apos;Espace économique européen, ce transfert est encadré par les clauses contractuelles types de
-              la Commission européenne ou par le cadre de protection des données UE-États-Unis.
+              sous-traitance. Supabase et Vercel sont des sociétés établies aux États-Unis : lorsque des données sont
+              traitées hors de l&apos;Espace économique européen, ce transfert est encadré par les clauses
+              contractuelles types de la Commission européenne ou par le cadre de protection des données
+              UE-États-Unis. Aucune donnée n&apos;est transmise à d&apos;autres tiers, sauf obligation légale.
             </p>
           </Section>
 
@@ -164,6 +149,10 @@ export default function Confidentialite() {
                 disparaissent ensuite selon son cycle habituel.
               </li>
               <li>Les golfs que vous avez partagés restent disponibles, sans votre nom.</li>
+              <li>
+                Les journaux techniques des hébergeurs (adresses IP, erreurs) sont conservés pour une durée limitée
+                fixée par chaque hébergeur, en général quelques jours à quelques semaines.
+              </li>
             </ul>
           </Section>
 
@@ -180,8 +169,8 @@ export default function Confidentialite() {
                 <strong>supprimer votre compte</strong> et vos données : Profil, puis « Supprimer mon compte » ;
               </li>
               <li>
-                demander la <strong>limitation</strong> d&apos;un traitement ou vous y <strong>opposer</strong>, en
-                écrivant à l&apos;adresse de contact ci-dessus.
+                demander la <strong>limitation</strong> d&apos;un traitement, vous y <strong>opposer</strong>, ou
+                exercer tout autre droit prévu par le RGPD, en écrivant à l&apos;adresse de contact ci-dessus.
               </li>
             </ul>
             <p>Une réponse vous est donnée dans un délai d&apos;un mois.</p>
@@ -195,13 +184,29 @@ export default function Confidentialite() {
             </p>
           </Section>
 
+          <Section title="E-mails">
+            <p>
+              Eagle Touch vous envoie uniquement les e-mails nécessaires au service : confirmation de votre adresse et
+              code de changement de mot de passe. Aucune lettre d&apos;information ni aucun e-mail publicitaire ne vous
+              est envoyé, et votre adresse n&apos;est jamais transmise à des fins commerciales.
+            </p>
+          </Section>
+
           <Section title="Cookies et stockage sur votre appareil">
             <p>
-              Eagle Touch n&apos;utilise aucun cookie publicitaire ni de mesure d&apos;audience. L&apos;application
-              enregistre uniquement sur votre appareil ce qui est strictement nécessaire à son fonctionnement : votre
-              session de connexion, votre choix d&apos;apparence (clair ou sombre) et le brouillon d&apos;une manche en
-              cours de création. Ces éléments ne demandent pas de consentement et disparaissent quand vous vous
-              déconnectez ou effacez les données du site dans votre navigateur.
+              Eagle Touch n&apos;utilise aucun cookie publicitaire ni de mesure d&apos;audience, c&apos;est pourquoi
+              aucun bandeau de consentement ne vous est présenté. L&apos;application enregistre uniquement sur votre
+              appareil ce qui est nécessaire à son fonctionnement :
+            </p>
+            <ul>
+              <li>votre session de connexion et l&apos;identifiant de votre compte ;</li>
+              <li>une copie de vos compétitions et vos saisies pas encore envoyées, pour jouer sans réseau ;</li>
+              <li>les fichiers de l&apos;application, pour qu&apos;elle s&apos;ouvre rapidement et hors ligne ;</li>
+              <li>votre choix d&apos;apparence (clair ou sombre) et le brouillon d&apos;une manche en cours de création.</li>
+            </ul>
+            <p>
+              Ces éléments ne demandent pas de consentement. Ils sont effacés quand vous vous déconnectez ou supprimez
+              votre compte, ou quand vous effacez les données du site dans votre navigateur.
             </p>
           </Section>
 
@@ -234,7 +239,11 @@ export default function Confidentialite() {
           <Section title="Mentions légales">
             <p>
               Site édité par {LEGAL.responsable}, {LEGAL.adresse}. Contact : {mail}. Hébergement : Vercel Inc.
-              Base de données : Supabase Inc.
+              Base de données : Supabase Inc. Envoi des e-mails : Sendinblue SAS (Brevo).
+            </p>
+            <p>
+              Les composants open source utilisés sont listés sur la page{" "}
+              <a className="underline underline-offset-4" href="/licences">licences</a>.
             </p>
             <p>
               Les données de l&apos;annuaire des golfs proviennent d&apos;OpenStreetMap (© contributeurs
@@ -248,14 +257,6 @@ export default function Confidentialite() {
               jour.
             </p>
           </Section>
-        </div>
-      </main>
-      <footer className="mx-auto flex max-w-[820px] items-center justify-between px-4 py-10 text-sm text-ink-3 md:px-8">
-        <a href="/" className="font-semibold tracking-[-0.02em] text-ink">
-          Eagle Touch
-        </a>
-        <p>© 2026 Eagle Touch</p>
-      </footer>
-    </>
+    </LegalPage>
   );
 }
