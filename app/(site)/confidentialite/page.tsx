@@ -80,7 +80,8 @@ export default function Confidentialite() {
               </li>
               <li>
                 <strong>Votre activité de jeu :</strong> compétitions rejointes, réponses aux manches, coups par
-                trou, résultats des défis, handicap de jeu utilisé à chaque manche.
+                trou, résultats des défis, handicap de jeu utilisé à chaque manche, et l&apos;Index Eagle Touch
+                calculé à partir de vos cartes validées (visible par les membres de vos compétitions).
               </li>
               <li>
                 <strong>Ce que vous créez :</strong> compétitions, manches, et golfs que vous ajoutez à la liste
