@@ -1,6 +1,6 @@
 # Eagle Touch: internal GDPR file
 
-Internal documents for the controller (Arthur Petit, Ghent, Belgium, artibowzz@gmail.com).
+Internal documents for the controller (Arthur Petit, Ghent, Belgium, admineagletouch@gmail.com).
 They are not shown on the site. Keep them up to date when the app or its providers change.
 Last review: 20 October 2026.
 
@@ -14,7 +14,7 @@ or a lawyer.
 
 | | |
 |---|---|
-| **Controller** | Arthur Petit, Ghent, Belgium, artibowzz@gmail.com |
+| **Controller** | Arthur Petit, Ghent, Belgium, admineagletouch@gmail.com |
 | **Purpose** | Running golf competitions between friends: accounts, rounds, scores, rankings, challenges, Eagle Touch index |
 | **Legal basis** | Contract (art. 6.1.b) for the service; legitimate interest (art. 6.1.f) for security and abuse prevention |
 | **People concerned** | Registered players; guests without an account added by a competition admin |
