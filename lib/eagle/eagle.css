@@ -589,3 +589,14 @@ fieldset.ro[disabled] [data-a="addTee"],fieldset.ro[disabled] [data-a="removeTee
 @media (min-width:960px){.netbar{top:16px;right:20px}}
 .steps{margin:0;padding-left:20px;font-size:14px;color:var(--ink-2);display:grid;gap:6px}
 .steps b{color:var(--ink)}
+
+/* ---------- Index Eagle Touch ---------- */
+.et-big{display:flex;align-items:baseline;gap:14px}
+.et-big b{font-size:44px;line-height:1;font-weight:650;letter-spacing:-.03em;color:var(--forest)}
+.et-big span{font-size:14px;color:var(--ink-2)}
+:root[data-theme="dark"] .et-big b{color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .et-big b{color:var(--gold)}}
+.et-meter{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.et-meter span{height:8px;border-radius:999px;background:var(--line)}
+.et-meter span.on{background:var(--gold)}
+.li.old{opacity:.6}
