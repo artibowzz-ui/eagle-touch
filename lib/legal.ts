@@ -1,5 +1,5 @@
 /*
-  Informations légales affichées sur /confidentialite.
+  Informations légales affichées sur /confidentialite, /conditions et /licences.
 */
 export const LEGAL = {
   /* Personne (ou association, société) responsable d'Eagle Touch et du traitement des données. */
@@ -12,5 +12,7 @@ export const LEGAL = {
   email: "artibowzz@gmail.com",
   /* Région du projet Supabase (Supabase > Project Settings > General), par exemple « Union européenne (Francfort) ». */
   regionBase: "Union européenne (Francfort, Allemagne)",
-  miseAJour: "2 octobre 2026",
+  miseAJour: "20 octobre 2026",
+  /* Date des conditions d'utilisation. */
+  conditionsMiseAJour: "20 octobre 2026",
 };
