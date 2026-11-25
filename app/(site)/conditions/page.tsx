@@ -4,7 +4,7 @@ import { LegalPage, Section, ContactMail } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Conditions d'utilisation · Eagle Touch",
-  description: "Les règles d'utilisation d'Eagle Touch : compte, contenus, Index Eagle Touch, responsabilité.",
+  description: "Les règles d'utilisation d'Eagle Touch : compte, contenus, index de compétition, responsabilité.",
 };
 
 export default function Conditions() {
@@ -23,7 +23,7 @@ export default function Conditions() {
       <Section title="Le service">
         <p>
           Eagle Touch permet d&apos;organiser des compétitions de golf entre amis : inscriptions aux manches, saisie
-          des scores trou par trou, classements à la moyenne Stableford, défis et Index Eagle Touch. Le service est
+          des scores trou par trou, classements à la moyenne Stableford, défis et index de compétition. Le service est
           édité par {LEGAL.responsable}, {LEGAL.adresse}, et il est gratuit. Si un jour une partie devenait payante,
           vous en seriez informé à l&apos;avance et rien ne vous serait facturé sans votre accord explicite.
         </p>
@@ -69,12 +69,14 @@ export default function Conditions() {
         </p>
       </Section>
 
-      <Section title="Index Eagle Touch et classements">
+      <Section title="Index de compétition et classements">
         <p>
-          L&apos;Index Eagle Touch est calculé par l&apos;application à partir des cartes validées dans Eagle Touch,
-          d&apos;après les règles du World Handicap System. Ce n&apos;est pas un index officiel : il ne remplace pas
-          l&apos;index délivré par votre fédération ou votre club et ne peut pas être utilisé en dehors d&apos;Eagle
-          Touch. Les classements et les résultats des défis dépendent des scores saisis par les joueurs.
+          Quand vous rejoignez une compétition, l&apos;index indiqué dans votre profil est figé comme index de départ.
+          L&apos;index de la compétition évolue ensuite à partir de vos cartes validées dans cette compétition,
+          d&apos;après les règles du World Handicap System ; l&apos;administrateur de la compétition peut corriger un
+          index de départ saisi par erreur. Ce n&apos;est pas un index officiel : il ne remplace pas l&apos;index délivré
+          par votre fédération ou votre club et ne peut pas être utilisé en dehors d&apos;Eagle Touch. Les classements
+          et les résultats des défis dépendent des scores saisis par les joueurs.
         </p>
       </Section>
 

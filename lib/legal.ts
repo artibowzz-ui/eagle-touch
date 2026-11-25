@@ -12,7 +12,7 @@ export const LEGAL = {
   email: "admineagletouch@gmail.com",
   /* Région du projet Supabase (Supabase > Project Settings > General), par exemple « Union européenne (Francfort) ». */
   regionBase: "Union européenne (Francfort, Allemagne)",
-  miseAJour: "20 octobre 2026",
+  miseAJour: "25 novembre 2026",
   /* Date des conditions d'utilisation. */
-  conditionsMiseAJour: "20 octobre 2026",
+  conditionsMiseAJour: "25 novembre 2026",
 };

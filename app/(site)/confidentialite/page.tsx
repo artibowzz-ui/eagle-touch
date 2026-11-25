@@ -52,8 +52,8 @@ export default function Confidentialite() {
               </li>
               <li>
                 <strong>Votre activité de jeu :</strong> compétitions rejointes, réponses aux manches, coups par
-                trou, résultats des défis, handicap de jeu utilisé à chaque manche, et l&apos;Index Eagle Touch
-                calculé à partir de vos cartes validées (visible par les membres de vos compétitions).
+                trou, résultats des défis, handicap de jeu utilisé à chaque manche, et votre index dans chaque
+                compétition, calculé à partir de vos cartes validées (visible par les membres de la compétition).
               </li>
               <li>
                 <strong>Ce que vous créez :</strong> compétitions, manches, et golfs que vous ajoutez à la liste
@@ -84,10 +84,10 @@ export default function Confidentialite() {
               </li>
             </ul>
             <p>
-              Vos données ne sont ni vendues, ni utilisées à des fins publicitaires. L&apos;Index Eagle Touch est
-              calculé automatiquement à partir de vos cartes ; il ne sert qu&apos;à fixer les handicaps de jeu dans les
-              compétitions dont l&apos;administrateur l&apos;a choisi, et cet administrateur peut toujours ajuster un
-              handicap à la main. Aucune autre décision automatisée n&apos;est prise à votre sujet.
+              Vos données ne sont ni vendues, ni utilisées à des fins publicitaires. Votre index dans chaque compétition
+              est calculé automatiquement à partir de vos cartes ; il ne sert qu&apos;à fixer vos handicaps de jeu dans
+              cette compétition, et son administrateur peut toujours corriger un index de départ ou un handicap à la
+              main. Aucune autre décision automatisée n&apos;est prise à votre sujet.
             </p>
           </Section>
 

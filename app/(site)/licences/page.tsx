@@ -88,7 +88,7 @@ export default function Licences() {
             , sous licence Unsplash.
           </li>
           <li>
-            Calcul de l&apos;Index Eagle Touch : inspiré des règles publiques du World Handicap System. Eagle Touch
+            Calcul des index de compétition : inspiré des règles publiques du World Handicap System. Eagle Touch
             n&apos;est ni affilié ni approuvé par The R&amp;A, l&apos;USGA ou une fédération de golf.
           </li>
         </ul>

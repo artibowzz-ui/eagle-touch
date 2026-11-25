@@ -2,7 +2,7 @@
 
 Internal documents for the controller (Arthur Petit, Ghent, Belgium, admineagletouch@gmail.com).
 They are not shown on the site. Keep them up to date when the app or its providers change.
-Last review: 20 October 2026.
+Last review: 25 November 2026.
 
 This file is practical guidance, not legal advice. For anything unusual, check with the Belgian
 Data Protection Authority (APD/GBA, www.autoriteprotectiondonnees.be / www.gegevensbeschermingsautoriteit.be)
@@ -15,17 +15,17 @@ or a lawyer.
 | | |
 |---|---|
 | **Controller** | Arthur Petit, Ghent, Belgium, admineagletouch@gmail.com |
-| **Purpose** | Running golf competitions between friends: accounts, rounds, scores, rankings, challenges, Eagle Touch index |
+| **Purpose** | Running golf competitions between friends: accounts, rounds, scores, rankings, challenges, competition index |
 | **Legal basis** | Contract (art. 6.1.b) for the service; legitimate interest (art. 6.1.f) for security and abuse prevention |
 | **People concerned** | Registered players; guests without an account added by a competition admin |
-| **Data** | Email, hashed password, first and last name, gender (to pick men's or ladies' cards), declared index and its history, optional photo, competitions joined, round answers, strokes per hole, challenge results, playing handicaps, Eagle Touch index, golf courses added, failed invite-code attempts (kept 1 day), technical logs at the hosts |
+| **Data** | Email, hashed password, first and last name, gender (to pick men's or ladies' cards), declared index and its history, optional photo, competitions joined, round answers, strokes per hole, challenge results, playing handicaps, competition index (starting index and current value per competition), golf courses added, failed invite-code attempts (kept 1 day), technical logs at the hosts |
 | **Sensitive data** | None (no health data, no location, no payment data) |
 | **Who receives it** | Members of the same competitions (names, photo, index, results); competition admins (can correct entries and cards); the processors below |
 | **Processors** | Supabase (database and accounts, EU region Frankfurt), Vercel (hosting), Brevo / Sendinblue SAS (service emails) |
 | **Transfers outside the EEA** | Supabase and Vercel are US companies: covered by the EU Standard Contractual Clauses in their DPAs and/or the EU-US Data Privacy Framework |
 | **Retention** | As long as the account exists; deleted immediately on account deletion; failed code attempts 1 day; host logs per the hosts' own short cycles |
 | **Security** | HTTPS everywhere; row-level security on every table; internal functions not exposed to the API; no anonymous access to tables; email never shown to other players; security headers (CSP, HSTS, no framing); invite codes random and rate-limited |
-| **Automated processing** | Eagle Touch index computed automatically; used for playing handicaps only in competitions whose admin chose it; the admin can always override |
+| **Automated processing** | Competition index: frozen from the declared index when the player joins a competition, then computed automatically from validated cards (WHS rules); used for playing handicaps in that competition; the competition admin can correct a starting index or a playing handicap |
 
 ---
 
