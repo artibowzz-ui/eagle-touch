@@ -1,7 +1,8 @@
 /* Eagle Touch : service worker.
    Garde sur le téléphone l'écran de l'application et ses fichiers, pour qu'elle s'ouvre sans réseau.
    Il ne touche jamais aux données : les échanges avec Supabase ne passent pas par lui. */
-const CACHE = 'eagle-touch-v1';
+/* Un cache par version du site : à chaque mise en ligne, l'ancien est supprimé (plus d'accumulation). */
+const CACHE = 'eagle-touch-' + (new URL(self.location.href).searchParams.get('v') || 'v1').replace(/[^a-zA-Z0-9._-]/g, '').slice(0, 40);
 const SHELL = '/app';
 const isStatic = p => p.startsWith('/_next/static/') || p.startsWith('/icons/') || /^\/(icon\.svg|apple-icon\.png|favicon\.ico|manifest\.webmanifest)$/.test(p);
 
@@ -31,7 +32,7 @@ self.addEventListener('fetch', e => {
     e.respondWith(new Promise(resolve => {
       let settled = false; const done = v => { if (!settled && v) { settled = true; resolve(v); } };
       const slow = setTimeout(() => cached().then(done), 4000);
-      fetch(r).then(res => { clearTimeout(slow); if (res.ok) keep(SHELL, res); done(res); })
+      fetch(r).then(res => { clearTimeout(slow); if (res.ok) { keep(SHELL, res); done(res); } else cached().then(m => done(m || res)); })
         .catch(() => { clearTimeout(slow); cached().then(m => { settled || resolve(m || Response.error()); settled = true; }); });
     }));
     return;
@@ -41,6 +42,6 @@ self.addEventListener('fetch', e => {
     return;
   }
   if (u.pathname.startsWith('/_next/image')) {
-    e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(res => keep(r, res)); return m || net; }));
+    e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(res => keep(r, res)); if (m) { net.catch(() => {}); return m; } return net; }));
   }
 });

@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Eagle Touch, compétitions de golf au Stableford",
   description:
     "Créez votre compétition de golf, saisissez les scores trou par trou et suivez un classement à la moyenne Stableford.",
+  openGraph: {
+    type: "website",
+    locale: "fr_BE",
+    siteName: "Eagle Touch",
+    title: "Eagle Touch, compétitions de golf au Stableford",
+    description: "Créez votre compétition de golf, saisissez les scores trou par trou et suivez un classement à la moyenne Stableford.",
+  },
 };
 
 export const viewport: Viewport = {

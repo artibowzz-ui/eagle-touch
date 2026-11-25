@@ -30,7 +30,7 @@ export function EagleApp() {
     /* Service worker : l'application s'ouvre sans réseau et peut s'installer sur l'écran d'accueil. */
     if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
       navigator.serviceWorker
-        .register("/sw.js")
+        .register("/sw.js?v=" + encodeURIComponent((process.env.NEXT_PUBLIC_BUILD_ID || "v1").slice(0, 12)))
         .then(() => navigator.serviceWorker.ready)
         .then((reg) => {
           const tell = () => {
@@ -65,6 +65,8 @@ export function EagleApp() {
         try { tried = sessionStorage.getItem("eagletouch.update") || ""; } catch {}
         if (tried === live) return;
         /* Pas de rechargement pendant que le joueur écrit dans un champ. */
+        /* Jamais pendant la saisie d'un parcours : ce brouillon n'existe qu'en mémoire. */
+        if (document.querySelector('form[data-form="course"]')) return;
         const el = document.activeElement;
         if (auto && el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
         try { sessionStorage.setItem("eagletouch.update", live); } catch {}
